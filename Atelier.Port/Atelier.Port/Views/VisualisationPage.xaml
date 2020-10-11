@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Atelier.Port.Views.VisualisationPage"
+             xmlns:cv="clr-namespace:CarouselView.FormsPlugin.Abstractions;assembly=CarouselView.FormsPlugin.Abstractions"
+              Title="DETAILS">
+
+    <ContentPage.Content>
+        <StackLayout Margin="30,10,30,0"  Padding="0" >
+
+            <Frame CornerRadius="30" Padding="0" IsClippedToBounds="True">
+                <cv:CarouselViewControl x:Name="cvBanners" ShowIndicators="true" IndicatorsShape="Circle" IndicatorsTintColor="LightGray"
+                                    CurrentPageIndicatorTintColor="#3E7CEB" Orientation="Horizontal" InterPageSpacing="0" 
+                                    HeightRequest="200"  HorizontalOptions="FillAndExpand" 
+                                    VerticalOptions="StartAndExpand" AnimateTransition="True" >
+                    <cv:CarouselViewControl.ItemTemplate>
+                        <DataTemplate>
+
+                            <Image Source="{Binding .}" Aspect="Fill" HorizontalOptions="FillAndExpand" />
+                        </DataTemplate>
+                    </cv:CarouselViewControl.ItemTemplate>
+                </cv:CarouselViewControl>
+            </Frame>
+            <ScrollView>
+                <StackLayout Margin="10,10,0,0" >
+                    <FlexLayout Direction="Column"  AlignItems="Stretch" Margin="0,10,0,0" IsTabStop="True">
+                        <FlexLayout FlexLayout.Basis="40">
+                            <Label FlexLayout.Grow="2" FontSize="20" Text="N° Remorque : " Margin="0,10,0,0" />
+                            <Label FlexLayout.Grow="2" x:Name="N_Remorque"  FontSize="20" Margin="0,10,0,0"/>
+                        </FlexLayout>
+                        <FlexLayout FlexLayout.Basis="40">
+                            <Label FlexLayout.Grow="2"  Text="Nom du Client : " FontSize="20" HorizontalOptions="Center" VerticalOptions="Center" WidthRequest="-1"  Margin="0,10,0,0"  />
+                            <Label FlexLayout.Grow="2" x:Name="NOM_Client"    FontSize="20" Margin="0,10,0,0"/>
+                        </FlexLayout>
+                    </FlexLayout>
+                    <Label Text="La liste de panne est :"    FontSize="20" Margin="0,10,0,0"/>
+
+                    <StackLayout x:Name="Affichage">
+                    </StackLayout>
+                </StackLayout>
+
+            </ScrollView>
+            <Button Text="Retour" Clicked="Button_Clicked" BackgroundColor="#3E7CEB" VerticalOptions="End" HorizontalOptions="Center" CornerRadius="10" TextColor="#FFFFFF" Margin="0,10,0,0" Scale="1" MinimumHeightRequest="-1" MinimumWidthRequest="-1" FontSize="Body" FlowDirection="MatchParent" />
+        </StackLayout>
+
+    </ContentPage.Content>
+</ContentPage>

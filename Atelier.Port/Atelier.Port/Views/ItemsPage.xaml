@@ -1,0 +1,193 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Atelier.Port.Views.ItemsPage"
+             xmlns:dm="clr-namespace:dotMorten.Xamarin.Forms;assembly=dotMorten.Xamarin.Forms.AutoSuggestBox"
+             x:Name="BrowseItemsPage"
+             Title="ACCUEIL">
+    <ScrollView>
+        <StackLayout Margin="0,20,0,0" >
+            <dm:AutoSuggestBox  x:Name="SuggestBox1" PlaceholderText="Donner numero de remorque" TextChanged="SuggestBox1_TextChanged" TextColor="Black" PlaceholderTextColor="#FF9B9A9A" WidthRequest="250" HorizontalOptions="Center"/>
+            <Entry Placeholder="Donner email distinataire" x:Name="EmailTo" WidthRequest="250" HorizontalOptions="Center" Margin="0,-10,0,0"/>
+            <FlexLayout Margin="40,0" >
+                <Label FlexLayout.Grow="1" FontSize="18" TextColor="Black" Text="Envoi email au client"/>
+                <Switch Toggled="Etat_Envoi_OnChanged" x:Name="Etat_Envoi" OnColor="#4398E9" IsToggled="True" ThumbColor="White"/>
+
+            </FlexLayout>
+            <StackLayout Margin="-15,15,0,0" Spacing="40" Padding="0,-110,0,0">
+                <FlexLayout Direction="Column" Padding="0,90,0,0" AlignItems="Stretch" Margin="25,0,0,0" IsTabStop="True">
+                    <FlexLayout FlexLayout.Basis="45">
+                        <StackLayout FlexLayout.Grow="1" Orientation="Horizontal">
+                            <ImageButton   Source="expand_icon" x:Name="imageexp" Clicked="imageexp_Clicked" HeightRequest="20" HorizontalOptions="Center" VerticalOptions="Center" Margin="0,30,0,0" WidthRequest="20"  />
+                            <CheckBox  HorizontalOptions="Center" VerticalOptions="Center"   Color="#4398E9"  CheckedChanged="CheckBox_CheckedChanged" Margin="0,25,0,0" />
+                            <Label   x:Name="label" HorizontalOptions="Center" VerticalOptions="Center" FontSize="18" TextColor="Black" Text="Roue"  BackgroundColor="#FFFFFF"   Margin="0,20,0,0"  />
+                        </StackLayout>
+                        <ImageButton  x:Name="image" Source="camera_icon"  Clicked="image_Clicked" WidthRequest="50"   HeightRequest="50" Margin="0,10,0,0" IsVisible="False" BackgroundColor="White" />
+                    </FlexLayout>
+                    <StackLayout x:Name="Details"  Margin="53,0,0,0"   IsVisible="False">
+                        <FlexLayout FlexLayout.Basis="45">
+                            <StackLayout FlexLayout.Grow="1" Orientation="Horizontal">
+                                <CheckBox  HorizontalOptions="Center" VerticalOptions="Center"   Color="#4398E9"  CheckedChanged="CheckBox_Details1_CheckedChanged" Margin="0,25,0,0" />
+                                <Label  x:Name="label_Detail_1" HorizontalOptions="Center" VerticalOptions="Center"  Text="Roue 1 gauche"  BackgroundColor="#FFFFFF"  FontSize="18" TextColor="Black" Margin="0,25,0,0"  />
+                            </StackLayout>
+                            <ImageButton  x:Name="image_Detail_1" Source="camera_icon"  Clicked="image_Details_1_Clicked" WidthRequest="50"   HeightRequest="50" Margin="0,15,0,0" IsVisible="False" BackgroundColor="White" />
+                        </FlexLayout>
+                        <FlexLayout FlexLayout.Basis="45" Margin="0,-10,0,0" >
+                            <StackLayout FlexLayout.Grow="1" Orientation="Horizontal">
+                                <CheckBox  HorizontalOptions="Center" VerticalOptions="Center"   Color="#4398E9"  CheckedChanged="CheckBox_Details2_CheckedChanged" Margin="0,20,0,0" />
+                                <Label x:Name="label_Detail_2" HorizontalOptions="Center" VerticalOptions="Center" TextColor="Black" Text="Roue 2 gauche"  BackgroundColor="#FFFFFF"  FontSize="18" Margin="0,25,0,0"  />
+                            </StackLayout>
+                            <ImageButton  x:Name="image_Detail_2" Source="camera_icon"  Clicked="image_Details_2_Clicked" WidthRequest="50"   HeightRequest="50" Margin="0,10,0,0" IsVisible="False" BackgroundColor="White" />
+                        </FlexLayout>
+                        <FlexLayout FlexLayout.Basis="45" Margin="0,-10,0,0" >
+                            <StackLayout FlexLayout.Grow="1" Orientation="Horizontal">
+                                <CheckBox  HorizontalOptions="Center" VerticalOptions="Center"   Color="#4398E9"  CheckedChanged="CheckBox_Details3_CheckedChanged" Margin="0,20,0,0" />
+                                <Label x:Name="label_Detail_3" HorizontalOptions="Center" VerticalOptions="Center" TextColor="Black" Text="Roue 3 gauche"  BackgroundColor="#FFFFFF"  FontSize="18" Margin="0,25,0,0"  />
+                            </StackLayout>
+                            <ImageButton  x:Name="image_Detail_3" Source="camera_icon"  Clicked="image_Details_3_Clicked" WidthRequest="50"   HeightRequest="50" Margin="0,10,0,0" IsVisible="False" BackgroundColor="White" />
+                        </FlexLayout>
+                        <FlexLayout FlexLayout.Basis="45" Margin="0,-10,0,0" >
+                            <StackLayout FlexLayout.Grow="1" Orientation="Horizontal">
+                                <CheckBox  HorizontalOptions="Center" VerticalOptions="Center"   Color="#4398E9"  CheckedChanged="CheckBox_Details4_CheckedChanged" Margin="0,20,0,0" />
+                                <Label x:Name="label_Detail_4" HorizontalOptions="Center" VerticalOptions="Center" TextColor="Black" Text="Roue 1 Droite"  BackgroundColor="#FFFFFF"  FontSize="18" Margin="0,25,0,0"  />
+                            </StackLayout>
+                            <ImageButton  x:Name="image_Detail_4" Source="camera_icon"  Clicked="image_Details_4_Clicked" WidthRequest="50"   HeightRequest="50" Margin="0,10,0,0" IsVisible="False" BackgroundColor="White" />
+                        </FlexLayout>
+                        <FlexLayout FlexLayout.Basis="45" Margin="0,-10,0,0" >
+                            <StackLayout FlexLayout.Grow="1" Orientation="Horizontal">
+                                <CheckBox  HorizontalOptions="Center" VerticalOptions="Center"   Color="#4398E9"  CheckedChanged="CheckBox_Details5_CheckedChanged" Margin="0,20,0,0" />
+                                <Label x:Name="label_Detail_5" HorizontalOptions="Center" VerticalOptions="Center" TextColor="Black" Text="Roue 2 Droite"  BackgroundColor="#FFFFFF"  FontSize="18" Margin="0,25,0,0"  />
+                            </StackLayout>
+                            <ImageButton  x:Name="image_Detail_5" Source="camera_icon"  Clicked="image_Details_5_Clicked" WidthRequest="50"   HeightRequest="50" Margin="0,10,0,0" IsVisible="False" BackgroundColor="White" />
+                        </FlexLayout>
+                        <FlexLayout FlexLayout.Basis="45" Margin="0,-10,0,0" >
+                            <StackLayout FlexLayout.Grow="1" Orientation="Horizontal">
+                                <CheckBox  HorizontalOptions="Center" VerticalOptions="Center"   Color="#4398E9"  CheckedChanged="CheckBox_Details6_CheckedChanged" Margin="0,20,0,0" />
+                                <Label x:Name="label_Detail_6" HorizontalOptions="Center" VerticalOptions="Center" TextColor="Black" Text="Roue 3 Droite"  BackgroundColor="#FFFFFF"  FontSize="18" Margin="0,25,0,0"  />
+                            </StackLayout>
+                            <ImageButton  x:Name="image_Detail_6" Source="camera_icon"  Clicked="image_Details_6_Clicked" WidthRequest="50"   HeightRequest="50" Margin="0,10,0,0" IsVisible="False" BackgroundColor="White" />
+                        </FlexLayout>
+                    </StackLayout>
+                    <FlexLayout FlexLayout.Basis="45" Margin="20,0,0,0">
+                        <StackLayout FlexLayout.Grow="1" Orientation="Horizontal">
+                            <CheckBox HorizontalOptions="Center" VerticalOptions="Center"   Color="#4398E9"  CheckedChanged="CheckBox_CheckedChanged_1" Margin="10,20,0,0" />
+                            <Label  x:Name="label1" HorizontalOptions="Center" VerticalOptions="Center" TextColor="Black" Text="Bache"  BackgroundColor="#FFFFFF"  FontSize="18" Margin="0,20,0,0"  />
+                        </StackLayout >
+                        <ImageButton  x:Name="image1" Source="camera_icon"  Clicked="image1_Clicked" WidthRequest="50"   HeightRequest="50" Margin="0,10,0,0" IsVisible="False" BackgroundColor="White" />
+                    </FlexLayout>
+                    <FlexLayout FlexLayout.Basis="45" Margin="20,0,0,0">
+                        <StackLayout FlexLayout.Grow="1" Orientation="Horizontal">
+                            <CheckBox  HorizontalOptions="Center" VerticalOptions="Center"   Color="#4398E9" Margin="10,25,0,0" CheckedChanged="CheckBox_CheckedChanged_2"  />
+                            <Label   x:Name="label2" HorizontalOptions="Center" VerticalOptions="Center" TextColor="Black" Text="Longeron"  BackgroundColor="#FFFFFF"  FontSize="18" Margin="0,20,0,0"  />
+                        </StackLayout>
+                        <ImageButton  x:Name="image2" Source="camera_icon"  Clicked="image2_Clicked" WidthRequest="50"   HeightRequest="50" Margin="0,15,0,0" IsVisible="False" BackgroundColor="White" />
+
+                    </FlexLayout>
+                    <FlexLayout FlexLayout.Basis="45" Margin="20,0,0,0">
+                        <StackLayout FlexLayout.Grow="1" Orientation="Horizontal">
+                            <CheckBox  HorizontalOptions="Center" VerticalOptions="Center"   Color="#4398E9" Margin="10,25,0,0" CheckedChanged="CheckBox_CheckedChanged_3"  />
+                            <Label   x:Name="label3" HorizontalOptions="Center" VerticalOptions="Center" TextColor="Black" Text="Freinage"  BackgroundColor="#FFFFFF"  FontSize="18" Margin="0,20,0,0"  />
+                        </StackLayout>
+                        <ImageButton  x:Name="image3" Source="camera_icon"  Clicked="image3_Clicked" WidthRequest="50"   HeightRequest="50" Margin="0,17,0,0" IsVisible="False" BackgroundColor="White" />
+
+                    </FlexLayout>
+                    <FlexLayout FlexLayout.Basis="45" >
+                        <StackLayout FlexLayout.Grow="1" Orientation="Horizontal">
+                            <ImageButton   Source="expand_icon" x:Name="imageexp2" Clicked="imageexp1_Clicked" HeightRequest="20" HorizontalOptions="Center" VerticalOptions="Center" Margin="0,30,0,0" WidthRequest="20"  />
+                            <CheckBox  HorizontalOptions="Center" VerticalOptions="Center"   Color="#4398E9" Margin="3,25,0,0"  CheckedChanged="CheckBox_CheckedChanged_4" />
+                            <Label   x:Name="label4" HorizontalOptions="Center" VerticalOptions="Center" TextColor="Black" Text="Essieux/Axe"  BackgroundColor="#FFFFFF"  FontSize="18" Margin="0,20,0,0"  />
+                        </StackLayout>
+                        <ImageButton  x:Name="image4" Source="camera_icon"  Clicked="image4_Clicked" WidthRequest="50"   HeightRequest="50" Margin="0,17,0,0" IsVisible="False" BackgroundColor="White" />
+                    </FlexLayout>
+                    <StackLayout x:Name="Details2"  Margin="53,0,0,0" IsVisible="False">
+                        <FlexLayout FlexLayout.Basis="45">
+                            <StackLayout FlexLayout.Grow="1" Orientation="Horizontal">
+                                <CheckBox  HorizontalOptions="Center" VerticalOptions="Center"   Color="#4398E9"  CheckedChanged="CheckBox_Details2_1_CheckedChanged" Margin="0,15,0,0" />
+                                <Label  x:Name="label_Detail2_1" HorizontalOptions="Center" VerticalOptions="Center" TextColor="Black" Text="Axe "  BackgroundColor="#FFFFFF"  FontSize="18" Margin="0,25,0,0"  />
+                            </StackLayout>
+                            <ImageButton  x:Name="image_Detail2_1" Source="camera_icon"  Clicked="image_Details2_1_Clicked" WidthRequest="50"   HeightRequest="50" Margin="0,15,0,0"  IsVisible="False" BackgroundColor="White" />
+                        </FlexLayout>
+                        <FlexLayout FlexLayout.Basis="45" Margin="0,-10,0,0" >
+                            <StackLayout FlexLayout.Grow="1" Orientation="Horizontal">
+                                <CheckBox  HorizontalOptions="Center" VerticalOptions="Center"   Color="#4398E9"  CheckedChanged="CheckBox_Details2_2_CheckedChanged" Margin="0,10,0,0" />
+                                <Label x:Name="label_Detail2_2" HorizontalOptions="Center" VerticalOptions="Center" TextColor="Black" Text="Coussin D'air "  BackgroundColor="#FFFFFF"  FontSize="18" Margin="0,20,0,0"  />
+                            </StackLayout>
+                            <ImageButton  x:Name="image_Detail2_2" Source="camera_icon"  Clicked="image_Details2_2_Clicked" WidthRequest="50"   HeightRequest="50" Margin="0,10,0,0" IsVisible="False" BackgroundColor="White" />
+                        </FlexLayout>
+                        <FlexLayout FlexLayout.Basis="45" Margin="0,-10,0,0" >
+                            <StackLayout FlexLayout.Grow="1" Orientation="Horizontal">
+                                <CheckBox  HorizontalOptions="Center" VerticalOptions="Center"   Color="#4398E9"  CheckedChanged="CheckBox_Details2_3_CheckedChanged" Margin="0,10,0,0" />
+                                <Label x:Name="label_Detail2_3" HorizontalOptions="Center" VerticalOptions="Center" TextColor="Black" Text="Amortisseurs"  BackgroundColor="#FFFFFF"  FontSize="18" Margin="0,20,0,0"  />
+                            </StackLayout>
+                            <ImageButton  x:Name="image_Detail2_3" Source="camera_icon"  Clicked="image_Details2_3_Clicked" WidthRequest="50"   HeightRequest="50" Margin="0,10,0,0"  IsVisible="False" BackgroundColor="White" />
+                        </FlexLayout>
+                    </StackLayout>
+                    <FlexLayout FlexLayout.Basis="45">
+                        <StackLayout FlexLayout.Grow="1" Orientation="Horizontal">
+                            <CheckBox  HorizontalOptions="Center" VerticalOptions="Center"   Color="#4398E9"   Margin="30,20,0,0" CheckedChanged="CheckBox_CheckedChanged_5"/>
+                            <Label   x:Name="label5" HorizontalOptions="Center" VerticalOptions="Center" Text="Feux Arrieres"  TextColor="Black"  FontSize="18" Margin="0,15,0,0"  />
+                        </StackLayout>
+                        <ImageButton  x:Name="image5" Source="camera_icon"  Clicked="image5_Clicked" WidthRequest="50"   HeightRequest="50" Margin="0,12,0,0"  IsVisible="False" BackgroundColor="White" />
+                    </FlexLayout>
+                    <FlexLayout FlexLayout.Basis="45">
+                        <StackLayout FlexLayout.Grow="1" Orientation="Horizontal">
+                            <ImageButton   Source="expand_icon" x:Name="imageexp3" Clicked="imageexp2_Clicked" HeightRequest="20" HorizontalOptions="Center" VerticalOptions="Center" Margin="0,30,0,0" WidthRequest="20"  />
+                            <CheckBox HorizontalOptions="Center" VerticalOptions="Center"   Color="#4398E9"   Margin="5,25,0,0" CheckedChanged="CheckBox_CheckedChanged_6" />
+                            <Label  x:Name="label6" HorizontalOptions="Center" VerticalOptions="Center" Text="Chassis/Elements" TextColor="Black" BackgroundColor="#FFFFFF"  FontSize="18" Margin="0,20,0,0"/>
+                        </StackLayout>
+                        <ImageButton  x:Name="image6" Source="camera_icon"  Clicked="image6_Clicked" WidthRequest="50"   HeightRequest="50" Margin="0,10,0,0" IsVisible="False" BackgroundColor="White" />
+                    </FlexLayout>
+                    <StackLayout x:Name="Details3"  Margin="53,0,0,0"  IsVisible="False">
+                        <FlexLayout FlexLayout.Basis="45">
+                            <StackLayout FlexLayout.Grow="1" Orientation="Horizontal">
+                                <CheckBox  HorizontalOptions="Center" VerticalOptions="Center"   Color="#4398E9"  CheckedChanged="CheckBox_Details3_1_CheckedChanged" Margin="0,25,0,0" />
+                                <Label  x:Name="label_Detail3_1" HorizontalOptions="Center" VerticalOptions="Center" TextColor="Black" Text="Portes"  BackgroundColor="#FFFFFF"  FontSize="18" Margin="0,25,0,0"  />
+                            </StackLayout>
+                            <ImageButton  x:Name="image_Detail3_1" Source="camera_icon"  Clicked="image_Details3_1_Clicked" WidthRequest="50"   HeightRequest="50" Margin="0,15,0,0"  IsVisible="False" BackgroundColor="White" />
+                        </FlexLayout>
+                        <FlexLayout FlexLayout.Basis="45" Margin="0,-10,0,0" >
+                            <StackLayout FlexLayout.Grow="1" Orientation="Horizontal">
+                                <CheckBox  HorizontalOptions="Center" VerticalOptions="Center"   Color="#4398E9"  CheckedChanged="CheckBox_Details3_2_CheckedChanged" Margin="0,20,0,0" />
+                                <Label x:Name="label_Detail3_2" HorizontalOptions="Center" VerticalOptions="Center" TextColor="Black" Text="Piquets"  BackgroundColor="#FFFFFF"  FontSize="18" Margin="0,25,0,0"  />
+                            </StackLayout>
+                            <ImageButton  x:Name="image_Detail3_2" Source="camera_icon"  Clicked="image_Details3_2_Clicked" WidthRequest="50"   HeightRequest="50" Margin="0,10,0,0" IsVisible="False" BackgroundColor="White" />
+                        </FlexLayout>
+                        <FlexLayout FlexLayout.Basis="45" Margin="0,0,0,0" >
+                            <StackLayout FlexLayout.Grow="1" Orientation="Horizontal">
+                                <CheckBox  HorizontalOptions="Center" VerticalOptions="Center"   Color="#4398E9"  CheckedChanged="CheckBox_Details3_3_CheckedChanged" Margin="0,20,0,0" />
+                                <Label x:Name="label_Detail3_3" HorizontalOptions="Center" VerticalOptions="Center" TextColor="Black" Text="Garde velo"  BackgroundColor="#FFFFFF"  FontSize="18" Margin="0,25,0,0"  />
+                            </StackLayout>
+                            <ImageButton  x:Name="image_Detail3_3" Source="camera_icon"  Clicked="image_Details3_3_Clicked" WidthRequest="50"   HeightRequest="50" Margin="0,10,0,0" IsVisible="False" BackgroundColor="White" />
+                        </FlexLayout>
+                    </StackLayout>
+                    <FlexLayout FlexLayout.Basis="45" >
+                        <StackLayout FlexLayout.Grow="1" Orientation="Horizontal">
+                            <ImageButton   x:Name="imageexp4"   Clicked="imageexp4_Clicked" HeightRequest="20" HorizontalOptions="Center" VerticalOptions="Center" Margin="0,30,0,0" WidthRequest="20"  Source="expand_icon" />
+                            <CheckBox  HorizontalOptions="Center" VerticalOptions="Center"   Color="#4398E9" Margin="5,25,0,0"  CheckedChanged="CheckBox_CheckedChanged_7"/>
+                            <Label   x:Name="label7" HorizontalOptions="Center" VerticalOptions="Center" TextColor="Black" Text="Visite Technique"  BackgroundColor="#FFFFFF"  FontSize="18" Margin="0,20,0,0"/>
+                        </StackLayout>
+                        <ImageButton  x:Name="image7" Source="camera_icon"  Clicked="image7_Clicked" WidthRequest="50"   HeightRequest="50" Margin="0,10,0,0" IsVisible="False" BackgroundColor="White" />
+                    </FlexLayout>
+                    <StackLayout x:Name="Details4"  Margin="45,0,0,0"  IsVisible="False">
+                        <FlexLayout FlexLayout.Basis="45" >
+                            <StackLayout FlexLayout.Grow="1" Orientation="Horizontal">
+                                <CheckBox  HorizontalOptions="Center" VerticalOptions="Center"   Color="#4398E9" Margin="0,20,0,0" CheckedChanged="CheckBox_CheckedChanged_8" />
+                                <Label   x:Name="label8" HorizontalOptions="Center" VerticalOptions="Center" TextColor="Black" Text="Visite technique Prochaine"  BackgroundColor="#FFFFFF"  FontSize="18" Margin="0,25,0,0"/>
+                            </StackLayout>
+                            <ImageButton  x:Name="image8" Source="camera_icon"  Clicked="image8_Clicked" WidthRequest="50"   HeightRequest="50" Margin="0,10,0,0"  IsVisible="False" BackgroundColor="White" />
+                        </FlexLayout>
+                        <FlexLayout FlexLayout.Basis="45">
+                            <StackLayout FlexLayout.Grow="1" Orientation="Horizontal">
+                                <CheckBox HorizontalOptions="Center" VerticalOptions="Center" Color="#4398E9"   Margin="0,20,0,0" CheckedChanged="CheckBox_CheckedChanged_9" />
+                                <Label  x:Name="label9" HorizontalOptions="Center" VerticalOptions="Center" Text="Assurance Proahine" TextColor="Black" BackgroundColor="#FFFFFF"  FontSize="18" Margin="0,23,0,0"/>
+                            </StackLayout>
+                            <ImageButton  x:Name="image9" Source="camera_icon"  Clicked="image9_Clicked" WidthRequest="50"   HeightRequest="50" Margin="0,10,0,0"  IsVisible="False" BackgroundColor="White" />
+                        </FlexLayout>
+                    </StackLayout>
+                </FlexLayout>
+            </StackLayout>
+
+            <Button Text="Sauvgardé" Clicked="Button_Clicked" BackgroundColor="#4398E9" WidthRequest="150" CornerRadius="20" HeightRequest="50" HorizontalOptions="Center" Padding="0" Margin="0,0,0,25" TextColor="White" VerticalOptions="EndAndExpand"/>
+        </StackLayout>
+    </ScrollView>
+</ContentPage>

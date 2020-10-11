@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Atelier.Port.Views.AboutPage"
+              Title = "CRÉER NOUVELLE FICHE">
+
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout Margin="15,0,0,0">
+            <Frame CornerRadius="30"  IsClippedToBounds="True" Padding="0" Margin="15,5,10,5" WidthRequest="250" HeightRequest="200" HorizontalOptions="Center" VerticalOptions="Center">
+                <ImageButton  x:Name="image_boutton" Source="camera_icon"  Clicked="image_boutton_Clicked" WidthRequest="250" Aspect="AspectFill" Margin="0"  HeightRequest="200" HorizontalOptions="Center" VerticalOptions="Center" BackgroundColor="White" />
+            </Frame>
+
+            <StackLayout Margin="10,10,0,0" VerticalOptions="CenterAndExpand" Spacing="30" >
+                <Entry x:Name="nb_remorque" Placeholder="N° Remorque" WidthRequest="280" HorizontalOptions="Center"/>
+                <Entry x:Name="Nom_Client" Placeholder="Nom du client" WidthRequest="280" HorizontalOptions="Center"/>
+                <Entry x:Name="id_email" Placeholder="Email client" WidthRequest="280" HorizontalOptions="Center"/>
+
+
+            </StackLayout>
+            <StackLayout Margin="0,0,0,30">
+                <Button Text="       Creér      " Clicked="Button_Clicked" BackgroundColor="#3E7CEB" VerticalOptions="End" HorizontalOptions="Center" CornerRadius="10" TextColor="#FFFFFF" Margin="0,5,0,0" Scale="1" MinimumHeightRequest="-1" MinimumWidthRequest="-1" FontSize="Body" FlowDirection="MatchParent" />
+            </StackLayout>
+        </StackLayout>
+    </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

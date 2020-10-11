@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Atelier.Port.Views.ListEmailsPage"
+             Title="LISTE DES PANNE">
+    <ContentPage.Content>
+        <StackLayout >
+            <Grid >
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <ListView x:Name="listView"
+                  RowHeight="200" ItemSelected="ListView_ItemSelected" IsPullToRefreshEnabled="True" VerticalScrollBarVisibility="Never" SelectionMode="Single">
+                    <ListView.ItemTemplate>
+                        <DataTemplate >
+                            <ViewCell >
+                                <Frame HasShadow="True" CornerRadius="15"  HorizontalOptions="Center" VerticalOptions="Center" OutlineColor="Gray"  Padding="10" Margin="10,5" >
+                                    <Grid >
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="*" />
+                                        </Grid.RowDefinitions>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="4*" />
+                                            <ColumnDefinition Width="6*" />
+                                        </Grid.ColumnDefinitions>
+                                        <Frame CornerRadius="30"  IsClippedToBounds="True" Padding="0" Margin="5,5,10,5"  >
+                                            <Image Grid.Row="0" Grid.Column="0" Source="{Binding  Photos.Identification_photos[0]}"
+                                Aspect="AspectFill"
+                                Margin="0"
+                                 HeightRequest="150" WidthRequest="400"/>
+                                        </Frame>
+                                        <StackLayout Grid.Row="0" Grid.Column="1" VerticalOptions="Center" Orientation="Vertical" Spacing="9" HorizontalOptions="Center">
+                                            <Label Text="{Binding Numero_Remorque,StringFormat='N° Remorque: {0}'}" TextColor="Black" FontSize="18" MaxLines="2" FontAttributes="Bold"/>
+                                            <Label Text="{Binding Nom_Client,StringFormat='Nom du Client: {0}'}" TextColor="Black" MaxLines="2" LineBreakMode="TailTruncation" FontSize="16"/>
+                                            <CheckBox   Color="#3E7CEB"  CheckedChanged="CheckBox_CheckedChanged" BindingContext="{Binding .}" />
+                                        </StackLayout>
+                                    </Grid>
+                                </Frame>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+                <Label x:Name="List_vide" Text="Votre liste est vide" FontSize="20" TextColor="Black" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" IsVisible="False"/>
+            </Grid>
+            <Button x:Name="envoi" Text="Envoi " Clicked="Button_Clicked" BackgroundColor="#4398E9" WidthRequest="150" CornerRadius="20" HeightRequest="50" HorizontalOptions="Center" Padding="0"  TextColor="White" VerticalOptions="EndAndExpand" IsVisible="False"/>
+            <Label x:Name="LabelConnection" VerticalOptions="EndAndExpand" HorizontalOptions="Center"/>
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
