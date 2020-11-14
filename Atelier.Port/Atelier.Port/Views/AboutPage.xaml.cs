@@ -36,7 +36,7 @@ namespace Atelier.Port.Views
             }
             else
             {
-                await DisplayAlert("Notification", "Veuillez verifier email ", "Validé");
+                await DisplayAlert("Notification", "Veuillez vérifier email ", "Validé");
             }
 
 

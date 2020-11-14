@@ -75,7 +75,7 @@ namespace Atelier.Port.Views
                 Info.Pannes.Identification_panne.Add(str);
 
 
-                if (await DisplayAlert("Notification", "voullez vous choisir ", "Prendre une Photo", "Accés à la galerie"))
+                if (await DisplayAlert("Notification", "Voulez vous choisir ", "Prendre une Photo", "Accés à la galerie"))
                 {
                     photo = await TakePhotoL(str);
                 }

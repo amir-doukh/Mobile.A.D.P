@@ -14,7 +14,7 @@
             <StackLayout Margin="10,10,0,0" VerticalOptions="CenterAndExpand" Spacing="30" >
                 <Entry x:Name="nb_remorque" Placeholder="N° Remorque" WidthRequest="280" HorizontalOptions="Center"/>
                 <Entry x:Name="Nom_Client" Placeholder="Nom du client" WidthRequest="280" HorizontalOptions="Center"/>
-                <Entry x:Name="id_email" Placeholder="Email client" WidthRequest="280" HorizontalOptions="Center"/>
+                <Entry x:Name="id_email" Placeholder="Email client" Keyboard="Email" WidthRequest="280" HorizontalOptions="Center"/>
 
 
             </StackLayout>

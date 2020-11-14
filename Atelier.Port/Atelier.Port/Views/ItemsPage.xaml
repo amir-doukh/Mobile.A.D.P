@@ -3,21 +3,26 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Atelier.Port.Views.ItemsPage"
              xmlns:dm="clr-namespace:dotMorten.Xamarin.Forms;assembly=dotMorten.Xamarin.Forms.AutoSuggestBox"
-             x:Name="BrowseItemsPage"
+             x:Name="BrowseItemsPage" BackgroundColor="White"
              Title="ACCUEIL">
     <ScrollView>
         <StackLayout Margin="0,20,0,0" >
-            <dm:AutoSuggestBox  x:Name="SuggestBox1" PlaceholderText="Donner numero de remorque" TextChanged="SuggestBox1_TextChanged" TextColor="Black" PlaceholderTextColor="#FF9B9A9A" WidthRequest="250" HorizontalOptions="Center"/>
-            <Entry Placeholder="Donner email distinataire" x:Name="EmailTo" WidthRequest="250" HorizontalOptions="Center" Margin="0,-10,0,0"/>
-            <FlexLayout Margin="40,0" >
+            <Frame BorderColor="Black" CornerRadius="20" Padding="0" WidthRequest="270" HorizontalOptions="Center" HeightRequest="40">
+                <dm:AutoSuggestBox  x:Name="SuggestBox1" Margin="5,0,0,-8" PlaceholderText="Donner numèro de remorque" TextChanged="SuggestBox1_TextChanged"  TextColor="Black" PlaceholderTextColor="#FF9B9A9A" />
+
+            </Frame>
+            <Frame BorderColor="Black" CornerRadius="20" Padding="0" Margin="0,10,0,0" WidthRequest="270" HorizontalOptions="Center" HeightRequest="40" >
+                <Entry Placeholder="Donner email destinataire" Margin="5,0,0,-8" x:Name="EmailTo"   />
+            </Frame>
+                <FlexLayout Margin="40,0" >
                 <Label FlexLayout.Grow="1" FontSize="18" TextColor="Black" Text="Envoi email au client"/>
-                <Switch Toggled="Etat_Envoi_OnChanged" x:Name="Etat_Envoi" OnColor="#4398E9" IsToggled="True" ThumbColor="White"/>
+                <Switch Toggled="Etat_Envoi_OnChanged" x:Name="Etat_Envoi" OnColor="DimGray" IsToggled="True" ThumbColor="#4398E9"/>
 
             </FlexLayout>
             <StackLayout Margin="-15,15,0,0" Spacing="40" Padding="0,-110,0,0">
                 <FlexLayout Direction="Column" Padding="0,90,0,0" AlignItems="Stretch" Margin="25,0,0,0" IsTabStop="True">
                     <FlexLayout FlexLayout.Basis="45">
-                        <StackLayout FlexLayout.Grow="1" Orientation="Horizontal">
+                        <StackLayout FlexLayout.Grow="1" Orientation="Horizontal" IsEnabled="True">
                             <ImageButton   Source="expand_icon" x:Name="imageexp" Clicked="imageexp_Clicked" HeightRequest="20" HorizontalOptions="Center" VerticalOptions="Center" Margin="0,30,0,0" WidthRequest="20"  />
                             <CheckBox  HorizontalOptions="Center" VerticalOptions="Center"   Color="#4398E9"  CheckedChanged="CheckBox_CheckedChanged" Margin="0,25,0,0" />
                             <Label   x:Name="label" HorizontalOptions="Center" VerticalOptions="Center" FontSize="18" TextColor="Black" Text="Roue"  BackgroundColor="#FFFFFF"   Margin="0,20,0,0"  />

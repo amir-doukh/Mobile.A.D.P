@@ -3,6 +3,6 @@
   <PropertyGroup>
     <SelectedDevice>HUAWEI INE-LX1</SelectedDevice>
     <DefaultDevice>my_phone</DefaultDevice>
-    <AndroidDesignerPreferredTheme>MainTheme</AndroidDesignerPreferredTheme>
+    <AndroidDesignerPreferredTheme>Theme.AppCompat.Light.NoActionBar</AndroidDesignerPreferredTheme>
   </PropertyGroup>
 </Project>

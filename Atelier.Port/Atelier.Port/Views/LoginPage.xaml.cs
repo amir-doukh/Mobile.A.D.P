@@ -25,21 +25,11 @@ namespace Atelier.Port.Views
            // this.BindingContext = new LoginViewModel();
             NavigationPage.SetHasNavigationBar(this, false);
         }
-        private async void OnLoginClicked(object obj)
+      /*  private async void OnLoginClicked(object obj)
         {
-
-            if (CrossConnectivity.Current.IsConnected == true)
-            {
-                Connectivity.ConnectivityChanged += Connectivity_ConnectivityChanged;
-                await LoadDataAsync();
-            }
-            else
-            {
-                await Application.Current.MainPage.DisplayAlert("Alerte", " Vérifier votre connectivite internet", "Valider");
-            }
             // Prefixing with `//` switches to a different navigation stack instead of pushing to the active one
             await Shell.Current.GoToAsync($"//{nameof(AboutPage)}");
-        }
+        }*/
 
         private async void Connectivity_ConnectivityChanged(object sender, ConnectivityChangedEventArgs e)
         {
@@ -52,7 +42,7 @@ namespace Atelier.Port.Views
 
         public async Task LoadDataAsync()
         {
-            WaitLoad.IsEnabled = true;
+            WaitLoad.IsVisible = true;
             log.IsEnabled = false;
 
             try
@@ -90,7 +80,7 @@ namespace Atelier.Port.Views
                             Console.WriteLine("probleme::" + ex);
                         }
 
-                        WaitLoad.IsEnabled = false;
+                        WaitLoad.IsVisible = false;
                         log.IsEnabled = true;
                     }
                     if (!string.IsNullOrWhiteSpace(token))
@@ -108,55 +98,23 @@ namespace Atelier.Port.Views
                     }
                 }
                 else
+                {
+                    WaitLoad.IsVisible = false;
+                    log.IsEnabled = true;
                     await Application.Current.MainPage.DisplayAlert("Alerte", "    Email ou mot de passe est incorrect", " Valider");
+
+                }
 
             }
             catch (Exception e)
             {
-                WaitLoad.IsEnabled = false;
+                WaitLoad.IsVisible = false;
                 log.IsEnabled = true;
                 Console.WriteLine("Probleme de connexion ;   " + e);
                 // await Application.Current.MainPage.DisplayAlert("Alerte", " Vérifier votre connectivite internet", "Valider");
             }
         }
-        /* public async Task<string> Auth(object user)
-         {
-             string message = " ";
-             string token = " ";
-             try
-             {
-                 using (var client = new HttpClient())
-                 {
-                     var json = JsonConvert.SerializeObject(user);
-                     var content = new StringContent(json, Encoding.UTF8, "application/json");
-                     var result = await client.PostAsync(Constants.URL_AUTH, content);
-                     message = result.StatusCode.ToString();
-                    var resultString = await result.Content.ReadAsStringAsync();
-                     JObject val = JObject.Parse(resultString);
-                     Constants.Token = val["jwt"].ToString();
-                     token = Constants.Token;
-                     Constants.Nom = val["user"]["username"].ToString();
-                 }
-             }
-             catch (Exception ex)
-             {
-                 if (message == "BadRequest")
-                 {
-
-                     await Application.Current.MainPage.DisplayAlert("Alerte", "La combinaison nom d'utilisateur ou le mot de passe est incorrect réessayez", "Valider");
-                 }
-                 else
-                 {
-                     await Application.Current.MainPage.DisplayAlert("Alerte", "Problème de connexion au serveur", "Valider");
-                     Console.WriteLine("probleme::"+ex);
-                 }
-
-                 WaitLoad = false;
-                 log = true;
-             }
-
-             return token;
-         }*/
+       
         public async void GetListRemorque()
         {
             try
@@ -190,6 +148,20 @@ namespace Atelier.Port.Views
                 Console.WriteLine("probleme:" + e.Message);
             }
 
+        }
+
+        private async void Button_Clicked(object sender, EventArgs e)
+        {
+
+            if (CrossConnectivity.Current.IsConnected == true)
+            {
+                Connectivity.ConnectivityChanged += Connectivity_ConnectivityChanged;
+                await LoadDataAsync();
+            }
+            else
+            {
+                await Application.Current.MainPage.DisplayAlert("Alerte", " Vérifier votre connectivite internet", "Valider");
+            }
         }
     }
 }
